@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Medical Bill WEB APP</title>
+  <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+  
+</head>
+
+<centre><body>
+ <div class="login">
+	<centre><h1>Predict Medical Bill</h1></centre>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <centre><form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="age" placeholder="Age" required="required" /><br><br>
+      <label>Sex</label><br><br>
+        <select name="sex" required="required">
+          <option value="1">Female</option>
+          <option value="0">Male</option>
+        </select><br>
+		<input type="text" name="bmi" placeholder="BMI" required="required" /><br><br>
+        <input type="text" name="children" placeholder="Number of Children" required="required" /><br><br>
+        <label>Are you a smoker?</label><br><br>
+        <select name = "smoker" required = "required">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select><br>
+        <!--<input type="text" name="region" placeholder="Region" required="required" />-->
+        <label>Region</label><br><br>
+        <select name = "Region" required="required">
+          <option value="1">southwest</option>
+          <option value="2">southeast</option>
+          <option value="3">northwest</option>
+          <option value="4">northeast</option>
+        </select><br><br>
+        
+
+        <centre><button type="submit" class="btn">Predict</button></centre>
+    </form></centre>
+
+   <br>
+   <br>
+   {{ prediction_text }} 
+
+ </div>
+
+
+</body></centre>
+</html>
