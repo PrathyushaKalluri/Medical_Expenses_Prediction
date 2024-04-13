@@ -1,7 +1,4 @@
 import numpy as np
-#####from sklearn.datasets import load_iris
-#####import matplotlib.pyplot as plt
-#####import seaborn as sns
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
